@@ -1,0 +1,50 @@
+#vermelho{
+    background-color: red;
+    width:80%;
+    height: 90vh;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-left: 10%;
+}
+
+#vermelho #verde {
+    background-color: green;
+    width: 100%;
+    height: 20%;
+    float:left;    
+}
+
+#vermelho #azul {
+    background-color: blue;
+    width: 50%;
+    height: 80%;
+    float:left;    
+}
+
+#vermelho #amarelo {
+    background-color: yellow;
+    width: 50%;
+    height: 80%;
+    float:left;    
+}
+
+@media screen and (max-width:420px) 
+and (min-width:0px) {
+    body{margin: 0px; padding: 0px;}
+    #vermelho{
+        width: 100%;
+        height: 100vh;
+        margin-left: 0;       
+    }
+    #vermelho #verde{
+        height: 30%;
+    }    
+    #vermelho #azul{
+        width: 100%;
+        height: 35%;
+    }
+    #vermelho #amarelo{
+        width: 100%;
+        height: 35%;
+    }
+}

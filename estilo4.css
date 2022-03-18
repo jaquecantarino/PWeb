@@ -1,0 +1,78 @@
+/*seletores por tag*/
+body{
+    background-color: black;
+    color: white;
+    font-family: arial;    
+}
+input, select, textarea {
+    background-color: yellow;
+    color: black;
+    padding: 5px;
+    margin: 5px;
+    border: solid 1px silver;
+}
+button {
+    background-color: white;
+    color:blueviolet;
+    border: solid 2px blueviolet;
+    width: 20%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/*seletores por id*/
+#janela {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: gray;
+    border: solid 2px white;
+    padding: 10px;
+    box-shadow: 5px 5px 5px silver;
+}
+
+#janela label{
+    width: 20%;
+    display: inline-table;
+    text-align: right;
+}
+
+
+/*seletores por classe*/
+.titulo{
+    color: lime;
+    border: dotted 2px lime;
+}
+
+@media screen and (orientation: portrait) {
+    body{margin:0; padding: 0;}
+    #janela{
+        width: 100%;       
+        margin-left: 0;
+        margin-right: 0;
+        padding-top:10px;
+        padding-bottom:10px;
+        padding-left:0px;
+        padding-right:0px;
+        box-sizing:border-box;
+    }
+    #janela label{
+        width: 100%;
+        text-align: left;
+    }
+    input, select, textarea{
+        width:100%;
+        padding: 15px;
+        margin-top:15px;
+        margin-bottom: 15px;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
+    }
+    button {
+        width: 100%; 
+        padding: 20px;    
+    }
+
+}

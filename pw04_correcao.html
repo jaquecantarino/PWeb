@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>pw03 - correção</title>
+        <link rel="stylesheet" href="estilo4.css" />
+    </head>
+    <body>
+    <h1 class="titulo">Contato</h1>    
+    <form id="janela">
+    <i>Seja bem vindo, preencha o <b>formulário</b>
+    abaixo para:
+    </b></i>    
+    <ul>
+        <li>duvidas</li>
+        <li>sugestões</li>
+        <li>criticas</li>
+        <li>Orçamentos</li>
+    </ul>    
+    caso queira ver nossos produtos, clique
+    <a href="produto.php">aqui</a><br/><br/>
+    
+        <label>nome:</label><input type="text" id="txtNome" required
+        placeholder="digite seu nome" size="50" />
+        <br/>
+        <label>email:</label><input type="email" id="txtEmail" 
+        required size="60" placeholder="digite seu email" />
+        <br/>
+        <label>telefone:</label><input type="text" id="txtTelefone"
+        required placeholder="digite seu telefone"
+        pattern="[0-9]{4,5}-[0-9]{4}" /><br/>
+        <label>assunto:</label><select id="txtAssunto">
+            <option>duvidas</option>
+            <option>sugestões</option>
+            <option>criticas</option>
+            <option selected>Orçamentos</option>
+        </select><br/><br/>
+        deseja receber uma copia deste e-mail:
+        <input type="radio" id="op1" name="recebe"/>Sim
+        <input type="radio" id="op2" name="recebe"/>Não
+        <br/><br/>
+    <label>mensagem:</label><textarea id="txtMensagem" 
+        placeholder="digite sua mensagem"></textarea>
+        <br/><br/>
+    <label></label><button id="bt1">Enviar</button>
+    </form>    
+    </body>
+</html>
