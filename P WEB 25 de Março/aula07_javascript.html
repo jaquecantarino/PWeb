@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Aula 7 | JavaScript
+    </title>
+</head>
+
+<body>
+    <h1>JavaScript</h1>
+    <form action="">
+        n1:<input type="text" id="n1" /><br />
+        n2:<input type="text" id="n2" /><br />
+        <button type="button" onclick="media();">media</button><br /> <!--onclick é um dos varios eventos do javascript, que indica que vai fazer
+        a função ao clicar no botão indicado-->
+
+        Resultado: <input type="text" id="resultado" readonly /> <br /> <!--readonly indica que não é possivel digitar nessa caixa de texto, apenas o
+        js vai alterar-->
+    </form>
+</body>
+
+</html>
+<!--ONDE ESTA SENDO FEITA AS REGRAS DO JS-->
+<script lang="javascript">
+    function media() {
+        /*condições para evitar letras e espaços em branco*/
+        if(n1.value=="" || isNaN(n1.value)){ 
+            /* || indica OU */ 
+            /* isNaN= indica que não é valido*/
+            alert("Informe somente números!"); 
+            n1.focus(); /* posiciona o cursor no campo n1, para facilitar a navegabilidade*/
+            n1.value=""; /* limpa o campo */
+            return false; /* interrompe a execução == break*/
+        }
+        if(n2.value=="" || isNaN(n2.value)){ 
+            alert("Informe somente números!"); 
+            n2.focus();
+            n2.value="";
+            return false;
+        }
+        var a = parseFloat(n1.value); /*value indica que o js vai pegar o valor digitado no campo n1*/
+        var b = parseFloat(n2.value); /*parseFloat transforma o dado coletado em float, pode ser parseInt para nums inteiros*/
+        var c = (a + b) / 2;
+        alert("O resultado da media=" + c);
+        resultado.value=c;
+    }
+</script>

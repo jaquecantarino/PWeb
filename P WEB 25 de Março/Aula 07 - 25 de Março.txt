@@ -1,0 +1,23 @@
+**JAVASCRIPT**
+
+- O javascript não tem acesso aos recursos do computador, por conta disso nós precisamos de um backend, para acessas bds e etc.
+
+-Programação de Front-end, 99% front-end e 1% funciona como back-end no nodejs;
+
+-Trabalha com validação de forms, interações locais com usuario, controles de navegação;
+
+- javascript: programação de frontend: tela: navegabilidade:programação de tela.
+
+-varias linguagens, basicamente todas, usam o javascript para front-end.
+
+((typescript= javascript orientado a objetos))
+
+- É uma linguagem case sensitive, porque é derivada da linguagem c.
+
+- Não precisa de IDE, funciona dentro do html.
+
+- é implementado por <script language="javascript"> ... </script> (no html)
+
+**pratica: arquivo: aula07_javascript.html**
+**atv: pweb07.html**
+

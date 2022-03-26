@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Aula 7 B| JavaScript
+    </title>
+</head>
+
+<body>
+    <form action="" id="frm1">
+        nome: <input type="text" id="nome" /> <br />
+        senha: <input type="password" id="senha1" /><br />
+        confirmação: <input type="password" id="senha2" /><br />
+        e-mail: <input type="password" id="email" /><br />
+        confirma: <input type="radio" id="opS" name="confirma" /> Sim 
+        <input type="radio" id="opN" name="confirma" /> Não<br /> 
+        <button type="button" onclick="validar()"> enviar </button>
+    </form>
+</body>
+
+</html>
+<script lang="javascript">
+    function validar() {
+        /*valida nome*/
+        if (nome.value.length <= 3) { /*valida se o valor inserido é maior ou igual a 3*/
+            alert("Digite seu nome completo !");
+            nome.value = "";
+            nome.focus();
+            return false;
+        }
+        /*valida senha */
+        if (senha1.value.length < 6 || isNaN(senha1.value)) {
+            alert("Digite uma senha alfanumerica de 6 ou mais caracteres");
+            senha1.value = "";
+            senha1.focus();
+            return false;
+        }
+        /*valida confirmação de senha*/
+        if(senha1.value == senha2.value){
+            alert("As senhas não estão iguais.")
+            senha2.value="";
+            senha2.focus;
+            return false;
+        }
+        /*valida email*/
+        if(email.value.length<6 || /*Valida o tamanho do dado*/
+        email.value.indexOf("@")<=0 || /*Valida se existe @ */
+        email.value.lastIndexOf(".") <= email.value.indexOf("@") ){ /*Valida se existe . no dado digitado, já que é necessario*/
+            alert("email invalido!")
+            email.value=""
+            email.focus();
+            return false;
+        }
+        /* Valida o checkbox */
+        if(opS.checked==false && opN.checked==false){ /* CHECKED== SE ESTA COM CHECK, SELECIONADO */
+            alert("Escolha uma confirmação")
+            return false;
+        }
+
+
+        alert("Tudo certo!");
+        frm1.submit(); /*estamos enviando para o backend de forma sincrona*/
+    }
+</script>
