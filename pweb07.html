@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Pweb 07 | JavaScript
+        </title>
+    </head>
+    <body>
+        <h1>Pweb 07</h1>
+        <form action="">
+            v1: <input type="text" id="v1"/><br/>
+            v2: <input type="text" id="v2"/><br/>
+            <br>
+            <button type="button" id="multi" onclick="multiplica()">Multiplicação</button>
+            <button type="button" id="divi" onclick="divide()">Divisão</button>
+            <button type="button" id="sub" onclick="subtrai()">Subtração</button>
+            <button type="button" id="soma" onclick="somar()">Soma</button>
+
+            <br>
+            <br>
+            Resultado: <input type="text" id="resultado" readonly/>
+
+        </form>
+    </body>
+</html>
+<script lang="javascript">
+
+    function multiplica() {
+        var a = parseFloat(v1.value);
+        var b = parseFloat(v2.value);
+        var resul = a*b;
+        resultado.value=resul;
+    }
+
+    function divide() {
+        if(v1.value==0 || v2.value==0){
+        alert("Não pode dividir por 0")
+        v1.value="";
+        v1.focus();
+        }
+        var a = parseFloat(v1.value);
+        var b = parseFloat(v2.value);
+        var resul = a/b;
+        resultado.value=resul;
+    }
+
+    function subtrai() {
+        var a = parseFloat(v1.value);
+        var b = parseFloat(v2.value);
+        var resul = a-b;
+        resultado.value=resul;  
+    }
+
+    function somar() {
+        var a = parseFloat(v1.value);
+        var b = parseFloat(v2.value);
+        var resul = (a + b);
+        resultado.value=resul;  
+    }
+
+</script>

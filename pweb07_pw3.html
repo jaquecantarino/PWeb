@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+  <title>Pweb 03 | JavaScript</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="mt-1 text-danger"><strong><em>Contato</em></strong></h1>
+    <p class="mt-2"><em>Seja bem vindo, preencha o <strong>formulário</strong> abaixo para:</em></p>
+    <ul>
+      <li>Dúvidas</li>
+      <li>Sugestões</li>
+      <li>Críticas</li>
+      <li>Orçamentos</li>
+    </ul>
+    <p>Caso queira ver nossos produtos, <a href="http://professor.norton.net.br/index.php/2022/03/17/pw-bootstrap/"
+        target="_blank">clique aqui</a></p>
+    <form class="form-horizontal" action="/action_page.php" id="frm1">
+      <div class="col-lg-8">
+        <div class="row form-group">
+          <label class="control-label col-sm-2 mt-2" for="name">Nome:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" placeholder="Digite seu nome" name="name">
+          </div>
+        </div>
+        <div class="row mt-3 form-group">
+          <label class="control-label col-sm-2 mt-2" for="email">Email:</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" placeholder="Digite seu email" name="email">
+          </div>
+        </div>
+        <div class="row mt-3 form-group">
+          <label class="control-label col-sm-2 mt-2" for="telefone">Telefone:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="phone" placeholder="Digite seu telefone" name="phone">
+          </div>
+        </div>
+
+        <div class="col-sm-offset-2 col-sm-2 mt-3">
+          <label for="sel1" class="form-label">Assunto:</label>
+          <select class="form-select" id="sel1" name="sellist1">
+            <option>Dúvidas</option>
+            <option>Sugestões</option>
+            <option>Críticas</option>
+            <option>Orçamentos</option>
+          </select>
+        </div>
+
+        <h6 class="mt-3">Deseja receber uma copia deste e-mail:</h6>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" name="opsradio" value="option1" id="sim">
+          <label class="form-check-label" for="radio1" >Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" name="opnradio" value="option2" id="nao">
+          <label class="form-check-label" for="radio2" >Não</label>
+        </div>
+
+        <div class="form-group mt-3">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+</body>
+
+</html>
+
+<script lang="javascript">
+
+    function validar(){
+        /* condição para validar se nome está preenchido e é valido */
+        if (name.value.length <= 3 ){ /* Garante que o tamanho do nome seja superior a 3 caracteres, caso não faz as ações*/
+            alert("Nome invalido! Preencha seu nome completo!"); /* ação 1: abri um alert (modal) na tela com o aviso*/
+            name.value=""; /* ação 2: limpa o conteudo que já estava dentro do nome, deixando o campo vazio */
+            name.focus(); /* ação 3: posiciona o cursor para preeencher no campo nome*/
+            return false;
+        }
+        /*condição para validar o campo e-mail*/
+        if(email.value.length <= 6 || email.value.indexOf("@")<=0 || email.value.lastIndexOf(".") <= email.value.indexOf("@")){
+            /* detalhando as condições:
+            email.value.length <= 6 - garante que o email vai ter pelo meno 6 caracteres.
+            email.value.indexOf("@")<=0 - garante que tenha o caracter @ nesse e-mail.
+            email.value.lastIndexOf(".") <= email.value.indexOf("@") - garante que tenha um . (ponto) após o @, no caso .com pelo menos
+            validando essas condições ele fará a mesma ação da validação do nome*/
+            alert("E-mail invalido!");
+            email.value="";
+            email.focus();
+            return false;
+        }
+        /* condição para validar telefone */
+        if(phone.value.length <= 11 || isNumeric(phone.value)){ /* valida se são apenas numeros preenchidos no campo*/
+            alert("Telefone invalido! Por favor, preencha corretamente.");
+            phone.value="";
+            phone.focus();
+            return false;
+        }
+        /* condição que valida se está seleciona o check de receber cópia ou não */
+        if(sim.checked==false && nao.checked==false){ /* valida se nenhuma das duas opção estão com check/selecionadas */
+            alert("Selecione uma opção. Deseja receber uma copia deste e-mail? ");
+            return false;
+        }
+
+        frm1.submit(); /*estamos enviando para o backend de forma sincrona*/
+    }
+    
+</script>
