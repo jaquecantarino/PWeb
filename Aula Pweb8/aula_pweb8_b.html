@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script language="javascript" src="../jquery-1.11.1.min_/jquery-1.11.1.min.js">
+    </script>
+</head>
+
+<body>
+    <a href="http://www.norton.net.br">Site</a><br>
+    <div id="teste">
+        teste <br>
+        de acesso ao <b> DOM</b>
+    </div>
+    <p>Texto texto</p>
+    <input type="text" id="nome">
+    <ol>
+    </ol>
+
+    <button id="btn1">Append</button>
+    <button id="btn2">Prepend</button>
+
+    <button id="btn3">Remove</button>
+    <button id="btn4">Empty</button>
+</body>
+
+</html>
+<script language="javascript">
+    //verifica se a pagina foi totalmente carregada
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            $("p").append("Text extra");
+            $("ol").append("<li>" + $("#nome").val() + "</li>");
+        });
+        $("#btn2").click(function () {
+            $("p").prepend("Texto anterior<br>");
+            $("ol").prepend("<li>" + $("#nome").val() + "</li>");
+        });
+        $("#btn3").click(function () {
+            $("p").remove();
+        });
+        $("#btn4").click(function () {
+            $("ol").empty();
+        });
+
+    });
+</script>

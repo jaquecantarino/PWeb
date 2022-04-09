@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--importando o Jquery-->
+    <script language="javascript" src="../jquery-1.11.1.min_/jquery-1.11.1.min.js"> /* coloquei o arquivo dentro da pasta pweb, para manter organizado */
+    </script>
+</head>
+
+<body>
+    <a href="http://www.norton.net.br">Site</a><br>
+    <div id="teste">
+        teste <br>
+        de acesso ao <b> DOM</b>
+    </div>
+    <p>Texto texto</p>
+    <input type="text" id="nome">
+    <button id="get">Ler</button>
+    <button id="set">Alterar</button>
+</body>
+
+</html>
+<script language="javascript">
+    //verifica se a pagina foi totalmente carregada
+    $(document).ready(function () {
+        $("#get").click(function () {
+            alert($("#teste").text());
+            alert($("#teste").html());
+            alert($("#nome").val());
+            alert($("a").attr("href"));
+        });
+
+        $("#set").click(function () {
+            var aux = $("#nome").val();
+            $("#teste").html(aux);
+            $("p").attr("align", "center");
+        });
+    });
+</script>
